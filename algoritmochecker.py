@@ -130,7 +130,6 @@ if __name__ == '__main__':
     # Resultados (tiempos de ejecución en microsegundos)
     resolucion = ejecutarAlgoritmos(variables["x"], variables["array"])
     print("Resultados (tiempos de ejecución en microsegundos):")
-    print(resolucion)
 
     # Impresión de resultados
     print("\nResultados:")
