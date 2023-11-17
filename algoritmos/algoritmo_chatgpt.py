@@ -2,7 +2,17 @@
 En este fichero tenemos el algoritmo generado por ChatGPT.
 """
 
-def algoritmo_chatgpt_raw(arr, objetivo):
+def algoritmo_chatgpt_raw(arr, objetivo) -> int:
+    """
+    Esta función es el código del algoritmo generado por ChatGPT.
+
+    args:
+        arr (list): Arreglo de números enteros.
+        objetivo (int): Valor a buscar.
+    
+    returns:
+        int: Índice del valor buscado.
+    """
     izquierda, derecha = 0, len(arr) - 1
 
     while izquierda <= derecha:

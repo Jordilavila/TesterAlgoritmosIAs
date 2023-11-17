@@ -3,6 +3,16 @@ En este fichero tenemos el algoritmo generado por Meta Llama 2.
 """
 
 def algoritmo_meta_raw(arr, x) -> int:
+    """
+    Esta función es el código del algoritmo generado por Meta Llama 2.
+    
+    args:
+        arr (list): Arreglo de números enteros.
+        x (int): Valor a buscar.
+        
+    returns:
+        int: Índice del valor buscado.
+    """
     low = 0
     high = len(arr) - 1
     while low <= high:
