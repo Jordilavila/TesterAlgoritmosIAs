@@ -50,8 +50,10 @@ def variablesStock() -> dict:
     
     return: dict
     """
+    import numpy as np
+    array = np.arange(500000000)
     return {
-        "array": [i for i in range(1000000)],
+        "array": array.tolist(),
         "x": 33,
     }
  
@@ -62,7 +64,7 @@ def ejecutarAlgoritmos(X: int, array: list):
     import time
     from algoritmos.algoritmo_chatgpt import algoritmo_chatgpt
     from algoritmos.algoritmo_bard import algoritmo_bard
-    from algoritmos.algoritmo_backbox import algoritmo_backbox
+    from algoritmos.algoritmo_blackbox import algoritmo_backbox
     from algoritmos.algoritmo_meta import algoritmo_meta
     algoritmos = {
         "valor_buscado": X,
@@ -90,25 +92,25 @@ def ejecutarAlgoritmos(X: int, array: list):
     start = time.time()
     algoritmo_chatgpt()
     end = time.time()
-    algoritmos["algoritmos"][0]["tiempo"] = round(end - start, 3)
+    algoritmos["algoritmos"][0]["tiempo"] = round((end - start) * 1000, 3)
 
     # Bard
     start = time.time()
-    algoritmo_bard()
+    algoritmo_bard(X, array)
     end = time.time()
-    algoritmos["algoritmos"][1]["tiempo"] = round(end - start, 3)
+    algoritmos["algoritmos"][1]["tiempo"] = round((end - start) * 1000, 3)
 
     # BackBox AI
     start = time.time()
-    algoritmo_backbox()
+    algoritmo_backbox(X, array)
     end = time.time()
-    algoritmos["algoritmos"][2]["tiempo"] = round(end - start, 3)
+    algoritmos["algoritmos"][2]["tiempo"] = round((end - start) * 1000, 3)
 
     # Meta Llama 2
     start = time.time()
     algoritmo_meta()
     end = time.time()
-    algoritmos["algoritmos"][3]["tiempo"] = round(end - start, 3)
+    algoritmos["algoritmos"][3]["tiempo"] = round((end - start) * 1000, 3)
 
     return algoritmos
 
@@ -126,6 +128,12 @@ if __name__ == '__main__':
     print("Dato a buscar:", variables["x"])
     print("Elementos del array:", len(variables["array"]))
 
+    # Resultados (tiempos de ejecución en milisegundos)
     resolucion = ejecutarAlgoritmos(variables["x"], variables["array"])
-    print("Algoritmos:")
+    print("Resultados (tiempos de ejecución en milisegundos):")
     print(resolucion)
+
+    # Impresión de resultados
+    print("\nResultados:")
+    for algoritmo in resolucion["algoritmos"]:
+        print(f"|   {algoritmo['nombre']}: {algoritmo['tiempo']} ms")
