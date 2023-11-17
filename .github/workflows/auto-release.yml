@@ -43,4 +43,4 @@ jobs:
   
             Se ha publicado una nueva versión: <code>${{ github.ref_name }}</code>"
   
-            Puedes ver los cambios en el <a href="https://github.com/${{ github.repository }}/releases/latest">changeLog</a> y consultar la <a href="https://ritsi.github.io/${{github.event.repository.name}}/">documentación</a>."
+            Puedes ver los cambios en el <a href="https://github.com/${{ github.repository }}/releases/latest">changeLog</a> y consultar la <a href="https://jordilavila.github.io/${{github.event.repository.name}}/">documentación</a>."
