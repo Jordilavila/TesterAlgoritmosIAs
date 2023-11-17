@@ -44,7 +44,7 @@ def variablesStock() -> dict:
     return: dict
     """
     return {
-        "array": [i for i in range(1000)],
+        "array": [i for i in range(1000000)],
         "x": 33,
     }
  
@@ -77,7 +77,7 @@ def ejecutarAlgoritmos(X: int, array: list):
             }
         ]
     }
-    pass
+    return algoritmos
 
 if __name__ == '__main__':
     
@@ -88,6 +88,11 @@ if __name__ == '__main__':
         print(f"|   {key.upper()}: {sysinfo[key]}")
         
     # Algoritmos
-    resolucion = ejecutarAlgoritmos()
+    print("\nVariables de stock:")
+    variables = variablesStock()
+    print("Dato a buscar:", variables["x"])
+    print("Elementos del array:", len(variables["array"]))
+
+    resolucion = ejecutarAlgoritmos(variables["x"], variables["array"])
     print("Algoritmos:")
     print(resolucion)
