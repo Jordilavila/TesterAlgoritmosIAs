@@ -1,9 +1,16 @@
 """
 Este archivo sirve para revisar los algoritmos generados por las IAs y obtener el tiempo de respuesta al desarrollo de cada uno de ellos.
 
-requerimientos:
+Requisitos:
     - py-cpuinfo
     - psutil
+    - numpy
+
+    Se instalan con el comando:  
+        `pip install py-cpuinfo psutil numpy`
+
+    O bien, con el comando:
+        `pip install -r requirements.txt`
 """
 
 FOLDER_ALGORITMOS = "algoritmos"
