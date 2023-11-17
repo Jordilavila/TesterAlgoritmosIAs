@@ -39,7 +39,7 @@ def algoritmo_bard(x:int, array:list) -> bool:
     res = algoritmo_bard_raw(array, x)
     return res != -1
 
-if __name__ == '_main__':
+if __name__ == '__main__':
     print("Algoritmo generado por Bard")
     
     lista = [1, 3, 5, 7, 9]
