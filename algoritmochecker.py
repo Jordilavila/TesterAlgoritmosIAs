@@ -51,7 +51,7 @@ def variablesStock() -> dict:
     return: dict
     """
     import numpy as np
-    array = np.arange(999900000)
+    array = np.arange(999000000)
     return {
         "array": array.tolist(),
         "x": 33,
@@ -92,26 +92,25 @@ def ejecutarAlgoritmos(X: int, array: list):
     start = time.time()
     algoritmo_chatgpt(X, array)
     end = time.time()
-    algoritmos["algoritmos"][0]["tiempo"] = round((end - start) * 1000, 6)
+    algoritmos["algoritmos"][0]["tiempo"] = round((end - start) * 1000000, 6)
 
     # Bard
     start = time.time()
     algoritmo_bard(X, array)
     end = time.time()
-    algoritmos["algoritmos"][1]["tiempo"] = round((end - start) * 1000, 6)
+    algoritmos["algoritmos"][1]["tiempo"] = round((end - start) * 1000000, 6)
 
     # BackBox AI
     start = time.time()
     algoritmo_backbox(X, array)
     end = time.time()
-    algoritmos["algoritmos"][2]["tiempo"] = round((end - start) * 1000, 6)
+    algoritmos["algoritmos"][2]["tiempo"] = round((end - start) * 1000000, 6)
 
     # Meta Llama 2
     start = time.time()
     algoritmo_meta(X, array)
     end = time.time()
-    algoritmos["algoritmos"][3]["tiempo"] = round((end - start) * 1000, 6)
-
+    algoritmos["algoritmos"][3]["tiempo"] = round((end - start) * 1000000, 6)
     return algoritmos
 
 if __name__ == '__main__':
@@ -128,9 +127,9 @@ if __name__ == '__main__':
     print("Dato a buscar:", variables["x"])
     print("Elementos del array:", len(variables["array"]))
 
-    # Resultados (tiempos de ejecución en milisegundos)
+    # Resultados (tiempos de ejecución en microsegundos)
     resolucion = ejecutarAlgoritmos(variables["x"], variables["array"])
-    print("Resultados (tiempos de ejecución en milisegundos):")
+    print("Resultados (tiempos de ejecución en microsegundos):")
     print(resolucion)
 
     # Impresión de resultados
