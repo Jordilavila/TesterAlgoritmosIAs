@@ -20,7 +20,6 @@ permissions:
 jobs:
   # Single deploy job since we're just deploying
   create-docs:
-    environment: Deploy docs
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
