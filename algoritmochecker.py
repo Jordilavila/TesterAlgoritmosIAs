@@ -134,4 +134,4 @@ if __name__ == '__main__':
     # Impresión de resultados
     print("\nResultados:")
     for algoritmo in resolucion["algoritmos"]:
-        print(f"|   {algoritmo['nombre']}: {algoritmo['tiempo']} ms")
+        print(f"|   {algoritmo['nombre']}: {algoritmo['tiempo']} µs")
