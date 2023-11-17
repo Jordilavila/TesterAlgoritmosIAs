@@ -52,6 +52,7 @@ def ejecutarAlgoritmos(X: int, array: list):
     """
     Esta función ejecuta los algoritmos de la carpeta algoritmos.
     """
+    import time
     from algoritmos.algoritmo_chatgpt import algoritmo_chatgpt
     from algoritmos.algoritmo_bard import algoritmo_bard
     from algoritmos.algoritmo_backbox import algoritmo_backbox
@@ -77,6 +78,31 @@ def ejecutarAlgoritmos(X: int, array: list):
             }
         ]
     }
+
+    # ChatGPT
+    start = time.time()
+    algoritmo_chatgpt()
+    end = time.time()
+    algoritmos["algoritmos"][0]["tiempo"] = round(end - start, 3)
+
+    # Bard
+    start = time.time()
+    algoritmo_bard()
+    end = time.time()
+    algoritmos["algoritmos"][1]["tiempo"] = round(end - start, 3)
+
+    # BackBox AI
+    start = time.time()
+    algoritmo_backbox()
+    end = time.time()
+    algoritmos["algoritmos"][2]["tiempo"] = round(end - start, 3)
+
+    # Meta Llama 2
+    start = time.time()
+    algoritmo_meta()
+    end = time.time()
+    algoritmos["algoritmos"][3]["tiempo"] = round(end - start, 3)
+
     return algoritmos
 
 if __name__ == '__main__':
